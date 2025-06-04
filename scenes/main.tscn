@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://falrxv6f4acg"]
+
+[ext_resource type="Script" uid="uid://6vh0l3h2ndqj" path="res://scripts/main2.gd" id="1_o5qli"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ig7tw"]
+size = Vector3(1, 0.01, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+mesh = SubResource("BoxMesh_ig7tw")
+skeleton = NodePath("../Camera3D")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.942607, 0.333906, 0, -0.333906, 0.942607, 0, 0.727024, 2.21264)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+
+[node name="ModelLoader" type="Node3D" parent="."]
+script = ExtResource("1_o5qli")

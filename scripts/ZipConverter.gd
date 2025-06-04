@@ -17,6 +17,9 @@ static func extract_all_from_zip(path_to_archive: String, path_to_destination: S
 	var reader = ZIPReader.new()
 	reader.open(path_to_archive)
 
+	# Ensure the destination directory exists.
+	DirAccess.make_dir_recursive_absolute(path_to_destination)
+
 	# Destination directory for the extracted files (this folder must exist before extraction).
 	# Not all ZIP archives put everything in a single root folder,
 	# which means several files/folders may be created in `root_dir` after extraction.
